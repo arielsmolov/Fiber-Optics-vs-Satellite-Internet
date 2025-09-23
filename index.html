@@ -4,12 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ariel Smolov</title>
-  <!-- Make sure style.css is in the same folder as index.html -->
-  <link rel="stylesheet" type="text/css" href="./style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <!-- Navigation Bar -->
-  <nav>
+  <nav class="navbar">
     <div class="nav-left">Ariel Smolov</div>
     <div class="nav-right">
       <a href="#about">About Me</a>
@@ -20,14 +19,13 @@
   </nav>
 
   <!-- About Section -->
-  <section id="about" class="section">
+  <section id="about" class="section hero">
     <h1>Hi, I’m Ariel 👋</h1>
     <p>
       After high school, I want to study <strong>Biomedical Engineering</strong>.  
       I like the idea of combining biology, engineering, and computing devices 
-      to solve real-world problems. Just like a <em>computer network</em> 
-      connects devices, I want to build systems that connect technology 
-      with the human body.
+      to solve real-world problems. Just like a <em>computer network</em> connects devices, 
+      I want to build systems that connect technology with the human body.
     </p>
   </section>
 
@@ -37,14 +35,10 @@
     <p>
       Data is at the heart of everything. A single <strong>bit</strong> is just 0 or 1, 
       but together, 8 bits make a <strong>byte</strong>, which stores more complex information.  
-      I learned about how <strong>analog data</strong> (like a live concert’s sound) can be 
-      converted into digital form. When computers compress data, they use 
-      <strong>lossless</strong> methods (keeping all the details) or <strong>lossy</strong> methods 
-      (throwing away some information, like a blurry photo).  
-      Even <strong>metadata</strong> (data about data, like an image’s resolution) plays a role 
-      in how we organize and use information.
+      I learned about how <strong>analog data</strong> can be converted into digital form.  
+      Computers compress data using <strong>lossless</strong> or <strong>lossy</strong> methods, 
+      and even <strong>metadata</strong> plays a role in organization.
     </p>
-    <!-- Placeholder for your Unit 1 image -->
     <img src="unit1-placeholder.jpg" alt="Unit 1 Data Concept">
   </section>
 
@@ -52,19 +46,14 @@
   <section id="unit2" class="section">
     <h2>Unit 2: Computer Systems & Networks</h2>
     <p>
-      The internet works because of many <strong>computing devices</strong> 
-      connected in a <strong>computer network</strong>. Messages travel across different 
-      <strong>paths</strong>, split into <strong>packets</strong>, and follow rules called 
-      <strong>protocols</strong> like <em>TCP</em> or <em>UDP</em>.  
-      Routers help those packets find the fastest way, using systems like the 
-      <strong>Domain Name System (DNS)</strong> to translate names into IP addresses.  
-      Thanks to <strong>fault tolerance</strong> and <strong>redundancy</strong>, the network keeps 
-      running even when parts fail — which shows amazing <strong>scalability</strong> as billions 
-      of devices connect.  
-      It all comes together with <strong>HTTP</strong>, the protocol that delivers the 
-      <em>World Wide Web</em>.
+      The internet works because of <strong>computing devices</strong> connected 
+      in a <strong>network</strong>. Messages split into <strong>packets</strong>, follow 
+      <strong>protocols</strong> like TCP or UDP, and travel across <strong>paths</strong> with 
+      help from <strong>routers</strong> and <strong>DNS</strong>.  
+      Thanks to <strong>fault tolerance</strong> and <strong>redundancy</strong>, it’s 
+      <strong>scalable</strong> to billions of devices. All this comes together with 
+      <strong>HTTP</strong>, powering the web.
     </p>
-    <!-- Placeholder for your Unit 2 image -->
     <img src="unit2-placeholder.jpg" alt="Unit 2 Network Concept">
   </section>
 
@@ -72,7 +61,6 @@
   <section id="video" class="section">
     <h2>How the Internet Works</h2>
     <p>Here’s a great video that explains how everything connects:</p>
-    <!-- Placeholder for video -->
     <div class="video-placeholder">
       <p>[Video will go here]</p>
     </div>

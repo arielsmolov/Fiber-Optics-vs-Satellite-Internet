@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Ariel Smolov</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <!-- Navigation Bar -->
-  <nav class="navbar">
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="nav-left">Ariel Smolov</div>
     <div class="nav-right">
       <a href="#about">About Me</a>
@@ -19,105 +19,238 @@
     </div>
   </nav>
 
-  <!-- About Section -->
-  <section id="about" class="section hero">
-    <h1>Hi, I’m Ariel 👋</h1>
-    <p>
-      After high school, I want to study <strong>Biomedical Engineering</strong>.  
-      I like the idea of combining biology, engineering, and <strong>computing devices</strong> 
-      to solve real-world problems. Just like a <em>computer network</em> connects devices, 
-      I want to build systems that connect technology with the human body.
-    </p>
-  </section>
+  <main>
+    <!-- About Section (Hero) -->
+    <section id="about" class="section hero reveal">
+      <h1>Hi, I’m Ariel 👋</h1>
+      <p>
+        After high school, I want to study <strong>Biomedical Engineering</strong>.  
+        I like the idea of combining biology, engineering, and
+        <span class="tooltip" data-tooltip="A physical device that can run a program (e.g., computer, smartphone, smart sensor).">computing devices</span>
+        to solve real-world problems. Just like a
+        <span class="tooltip" data-tooltip="A group of interconnected computing devices capable of sending or receiving data.">computer network</span>
+        connects devices, I want to build systems that connect technology with the human body.
+      </p>
+    </section>
 
-  <!-- Unit 1 Section -->
-  <section id="unit1" class="section">
-    <h2>Unit 1: Data</h2>
-    <p>
-      Data is at the heart of everything. A single <strong>bit</strong> is just 0 or 1, 
-      but together, 8 bits make a <strong>byte</strong>, which stores more complex information.  
-      Sometimes, computers run into <strong>roundoff errors</strong> when they don’t have 
-      enough bits to store a number exactly, like trying to represent π with only 3 digits.  
-      I learned about how <strong>analog data</strong> (like music or voice) can be converted into digital form.  
-      To store and send data more efficiently, computers use compression.  
-      <strong>Lossless</strong> compression preserves every detail, while <strong>lossy</strong> 
-      compression throws away some information to save space.  
-      Even <strong>metadata</strong> (data about data, like a file’s author or date) is crucial 
-      for keeping things organized.
-    </p>
-    <img src="unit1-placeholder.jpg" alt="Unit 1 Data Concept">
-  </section>
+    <!-- Unit 1: Data -->
+    <section id="unit1" class="section reveal">
+      <h2>Unit 1: Data</h2>
 
-  <!-- Unit 2 Section -->
-  <section id="unit2" class="section">
-    <h2>Unit 2: Computer Systems & Networks</h2>
-    <p>
-      The internet works because of <strong>computing devices</strong> connected 
-      in a <strong>computer network</strong>. Messages are split into <strong>packets</strong>, 
-      and each packet may follow a different <strong>path</strong> to reach its destination.  
-      To keep things organized, devices follow <strong>protocols</strong> like 
-      <strong>Transmission Control Protocol (TCP)</strong> for reliable delivery or 
-      <strong>User Datagram Protocol (UDP)</strong> when speed is more important than accuracy.  
-      Along the way, <strong>routers</strong> forward data and the 
-      <strong>Domain Name System (DNS)</strong> translates easy-to-remember 
-      <strong>URLs</strong> into IP addresses.  
-      Thanks to <strong>fault tolerance</strong> and <strong>redundancy</strong>, 
-      the internet keeps working even when parts fail.  
-      It’s also highly <strong>scalable</strong>, supporting billions of devices.  
-      Finally, <strong>HTTP</strong> makes it possible for us to browse the 
-      <strong>World Wide Web</strong> every day.
-    </p>
-    <img src="unit2-placeholder.jpg" alt="Unit 2 Network Concept">
-  </section>
+      <p>
+        Data is at the heart of everything. A single
+        <span class="tooltip" data-tooltip="A binary digit, either 0 or 1.">bit</span>
+        is just 0 or 1, but together 8 bits make a
+        <span class="tooltip" data-tooltip="A sequence of 8 bits.">byte</span>, which stores more complex information.
+        Computers also handle <span class="tooltip" data-tooltip="Values that change smoothly over time, e.g., sound waves.">analog data</span>
+        and convert it to digital form for storage and transmission.
+      </p>
 
-  <!-- Definitions Section -->
-  <section id="definitions" class="section">
-    <h2>Definitions</h2>
-    <div class="definitions">
-      <!-- Unit 1 -->
-      <div class="definition"><button class="definition-toggle">Bit</button><p class="definition-text">A binary digit, either 0 or 1.</p></div>
-      <div class="definition"><button class="definition-toggle">Byte</button><p class="definition-text">A sequence of 8 bits.</p></div>
-      <div class="definition"><button class="definition-toggle">Roundoff</button><p class="definition-text">Error that results when the number of bits is not enough to represent the number with full precision.</p></div>
-      <div class="definition"><button class="definition-toggle">Analog Data</button><p class="definition-text">Values that change smoothly, rather than in discrete intervals, over time.</p></div>
-      <div class="definition"><button class="definition-toggle">Lossless Compression</button><p class="definition-text">Compressing data in a way that preserves all data and allows full recovery of the original.</p></div>
-      <div class="definition"><button class="definition-toggle">Lossy Compression</button><p class="definition-text">Compressing data in a way that discards some data and makes it impossible to recover the original.</p></div>
-      <div class="definition"><button class="definition-toggle">Metadata</button><p class="definition-text">Data about data, such as descriptive information about a file.</p></div>
+      <p>
+        When numbers can't be represented with enough bits you can get
+        <span class="tooltip" data-tooltip="Error that results when there are not enough bits to represent a number with full precision.">roundoff</span>
+        errors. To save space, systems use compression: <span class="tooltip" data-tooltip="Compressing data in a way that preserves all data and allows full recovery of the original.">lossless</span>
+        compression keeps everything, while <span class="tooltip" data-tooltip="Compressing data in a way that discards some data and makes it impossible to recover the original.">lossy</span>
+        compression sacrifices some detail (like image quality) for smaller files. Metadata — <span class="tooltip" data-tooltip="Data about data, like descriptive information about a file or record.">metadata</span> — helps describe files so we can search and sort them.
+      </p>
 
-      <!-- Unit 2 -->
-      <div class="definition"><button class="definition-toggle">Computing Device</button><p class="definition-text">A physical device that can run a program (e.g., computer, smartphone, sensor).</p></div>
-      <div class="definition"><button class="definition-toggle">Computer Network</button><p class="definition-text">A group of interconnected computing devices capable of sending or receiving data.</p></div>
-      <div class="definition"><button class="definition-toggle">Path</button><p class="definition-text">The series of connections between computing devices on a network.</p></div>
-      <div class="definition"><button class="definition-toggle">Protocol</button><p class="definition-text">An agreed-upon set of rules that specify how systems communicate.</p></div>
-      <div class="definition"><button class="definition-toggle">Fault Tolerant</button><p class="definition-text">A system’s ability to continue functioning even if components fail.</p></div>
-      <div class="definition"><button class="definition-toggle">Scalability</button><p class="definition-text">The ability of a system to expand or contract to meet new demands.</p></div>
-      <div class="definition"><button class="definition-toggle">Bandwidth</button><p class="definition-text">The maximum transmission capacity of a system, measured in bit rate.</p></div>
-      <div class="definition"><button class="definition-toggle">URL</button><p class="definition-text">An easy-to-remember web address (e.g., www.example.com).</p></div>
-      <div class="definition"><button class="definition-toggle">Physical Network</button><p class="definition-text">The hardware and physical connections that carry internet signals.</p></div>
-      <div class="definition"><button class="definition-toggle">Internet Protocol (IP)</button><p class="definition-text">Assigns unique IP addresses and routes data between devices.</p></div>
-      <div class="definition"><button class="definition-toggle">Transmission Control Protocol (TCP)</button><p class="definition-text">Ensures reliable, ordered, and error-checked delivery of data packets.</p></div>
-      <div class="definition"><button class="definition-toggle">User Datagram Protocol (UDP)</button><p class="definition-text">A lightweight alternative to TCP with minimal error-checking, faster but less reliable.</p></div>
-      <div class="definition"><button class="definition-toggle">Packets</button><p class="definition-text">Small chunks of data into which larger messages are divided for transmission.</p></div>
-      <div class="definition"><button class="definition-toggle">Routers</button><p class="definition-text">Specialized computers that forward data across networks, choosing the fastest path.</p></div>
-      <div class="definition"><button class="definition-toggle">Domain Name System (DNS)</button><p class="definition-text">Translates human-readable domain names into IP addresses.</p></div>
-      <div class="definition"><button class="definition-toggle">Hypertext Transfer Protocol (HTTP)</button><p class="definition-text">Used for transmitting and requesting web pages on the World Wide Web.</p></div>
-      <div class="definition"><button class="definition-toggle">World Wide Web (WWW)</button><p class="definition-text">A system of linked pages, media, and files browsable over HTTP.</p></div>
-      <div class="definition"><button class="definition-toggle">Message Delivery on the Internet</button><p class="definition-text">Messages are split into packets that may take different paths.</p></div>
-      <div class="definition"><button class="definition-toggle">Redundancy</button><p class="definition-text">Multiple pathways exist so if one route fails, packets can take another.</p></div>
-      <div class="definition"><button class="definition-toggle">IPv4</button><p class="definition-text">Uses 32-bit addresses, providing over 4 billion unique addresses.</p></div>
-      <div class="definition"><button class="definition-toggle">IPv6</button><p class="definition-text">Adds 16 more bits, massively increasing available addresses.</p></div>
-    </div>
-  </section>
+      <div class="content-block">
+        <img src="unit1-placeholder.jpg" alt="Unit 1 Data Concept">
+      </div>
+    </section>
 
-  <!-- Video Section -->
-  <section id="video" class="section">
-    <h2>How the Internet Works</h2>
-    <p>Here’s a great video that explains how everything connects:</p>
-    <div class="video-placeholder">
-      <p>[Video will go here]</p>
-    </div>
-  </section>
+    <!-- Unit 2: Computer Systems & Networks -->
+    <section id="unit2" class="section reveal">
+      <h2>Unit 2: Computer Systems & Networks</h2>
 
-  <footer>
+      <p>
+        The internet works because of <span class="tooltip" data-tooltip="A physical device that can run a program (e.g., computer, smartphone, smart sensor).">computing devices</span>
+        connected together in a <span class="tooltip" data-tooltip="A group of interconnected computing devices capable of sending or receiving data.">computer network</span>.
+        Messages are split into small <span class="tooltip" data-tooltip="Small chunks of data into which larger messages are divided for transmission.">packets</span>,
+        which travel along different <span class="tooltip" data-tooltip="The series of connections between computing devices on a network, from sender to receiver.">paths</span>.
+      </p>
+
+      <p>
+        Devices follow <span class="tooltip" data-tooltip="An agreed set of rules that specify how systems behave and communicate.">protocols</span>
+        such as <span class="tooltip" data-tooltip="Ensures reliable, ordered, and error-checked delivery of data packets.">TCP</span> (reliable) or
+        <span class="tooltip" data-tooltip="A lightweight alternative to TCP with minimal error-checking; faster but less reliable.">UDP</span> (fast).
+        <span class="tooltip" data-tooltip="Specialized computers that forward data across networks, choosing the fastest available path.">Routers</span>
+        forward packets; <span class="tooltip" data-tooltip="Translates human-readable domain names (like example.com) into IP addresses.">DNS</span>
+        turns friendly <span class="tooltip" data-tooltip="An easy-to-remember web address (e.g., www.example.com).">URLs</span> into numeric addresses.
+      </p>
+
+      <p>
+        The network is designed for <span class="tooltip" data-tooltip="Multiple pathways exist in the network so if one route fails, packets can take another.">redundancy</span>
+        and <span class="tooltip" data-tooltip="A system's ability to continue functioning even if individual components fail.">fault tolerance</span>,
+        making it <span class="tooltip" data-tooltip="The ability of a system to expand or contract to meet new demands.">scalable</span>
+        enough to support billions of devices. <span class="tooltip" data-tooltip="Protocol used for transmitting and requesting web pages and media on the World Wide Web.">HTTP</span>
+        powers the <span class="tooltip" data-tooltip="A system of linked pages, media, and files browsable over HTTP.">World Wide Web (WWW)</span>.
+      </p>
+
+      <div class="content-block">
+        <img src="unit2-placeholder.jpg" alt="Unit 2 Network Concept">
+      </div>
+    </section>
+
+    <!-- Definitions Accordion -->
+    <section id="definitions" class="section reveal">
+      <h2>Definitions</h2>
+      <div class="definitions">
+        <!-- Unit 1: Data -->
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">bit</button>
+          <div class="definition-text">A binary digit, either 0 or 1.</div>
+        </div>
+
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">byte</button>
+          <div class="definition-text">A sequence of 8 bits.</div>
+        </div>
+
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">roundoff</button>
+          <div class="definition-text">Error that results when the number of bits is not enough to represent the number with full precision.</div>
+        </div>
+
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">analog data</button>
+          <div class="definition-text">Values that change smoothly, rather than in discrete intervals, over time (e.g., sound waves).</div>
+        </div>
+
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">lossless</button>
+          <div class="definition-text">Compressing data in a way that preserves all data and allows full recovery.</div>
+        </div>
+
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">lossy</button>
+          <div class="definition-text">Compressing data in a way that discards some data and makes it impossible to recover the original.</div>
+        </div>
+
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">metadata</button>
+          <div class="definition-text">Data about data, like descriptive information about a file or a database row.</div>
+        </div>
+
+        <!-- Unit 2: Networks -->
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">computing device</button>
+          <div class="definition-text">A physical device that can run a program (e.g., computer, smartphone, smart sensor).</div>
+        </div>
+
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">computer network</button>
+          <div class="definition-text">A group of interconnected computing devices capable of sending or receiving data.</div>
+        </div>
+
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">path</button>
+          <div class="definition-text">The series of connections between sender and receiver across a network.</div>
+        </div>
+
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">protocol</button>
+          <div class="definition-text">An agreed-upon set of rules that specify how systems behave and communicate.</div>
+        </div>
+
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">fault tolerant</button>
+          <div class="definition-text">A system’s ability to continue functioning even if individual components fail.</div>
+        </div>
+
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">scalability</button>
+          <div class="definition-text">The ability of a system to expand or contract to meet new demands.</div>
+        </div>
+
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">bandwidth</button>
+          <div class="definition-text">The maximum transmission capacity of a system, measured by bit rate (bits per second).</div>
+        </div>
+
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">URL (Uniform Resource Locator)</button>
+          <div class="definition-text">An easy-to-remember web address (e.g., www.example.com).</div>
+        </div>
+
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">physical network</button>
+          <div class="definition-text">The hardware and physical connections that carry internet signals.</div>
+        </div>
+
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">Internet Protocol (IP)</button>
+          <div class="definition-text">Assigns unique IP addresses to devices and determines how data is routed between them.</div>
+        </div>
+
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">Transmission Control Protocol (TCP)</button>
+          <div class="definition-text">Ensures reliable, ordered, and error-checked delivery of data packets.</div>
+        </div>
+
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">User Datagram Protocol (UDP)</button>
+          <div class="definition-text">A lightweight alternative to TCP with minimal error-checking (faster but less reliable).</div>
+        </div>
+
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">packets</button>
+          <div class="definition-text">Small chunks of data into which larger messages are divided for transmission.</div>
+        </div>
+
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">routers</button>
+          <div class="definition-text">Specialized computers that forward data across networks, choosing the fastest available path.</div>
+        </div>
+
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">Domain Name System (DNS)</button>
+          <div class="definition-text">Translates human-readable domain names (like example.com) into IP addresses.</div>
+        </div>
+
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">Hypertext Transfer Protocol (HTTP)</button>
+          <div class="definition-text">Used for transmitting and requesting web pages and media on the World Wide Web.</div>
+        </div>
+
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">World Wide Web (WWW)</button>
+          <div class="definition-text">A system of linked pages, media, and files browsable over HTTP.</div>
+        </div>
+
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">Message Delivery on the Internet</button>
+          <div class="definition-text">Messages are split into packets, which may take different paths; the internet does not require a direct connection between sender and receiver.</div>
+        </div>
+
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">Redundancy</button>
+          <div class="definition-text">Multiple pathways exist in the network so if one route fails, packets can take another.</div>
+        </div>
+
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">IPv4</button>
+          <div class="definition-text">Uses 32-bit addresses (≈ 4.3 billion unique addresses).</div>
+        </div>
+
+        <div class="definition">
+          <button class="definition-toggle" aria-expanded="false">IPv6</button>
+          <div class="definition-text">Adds 16 more bits to IPv4, massively increasing the address space.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video" class="section reveal">
+      <h2>How the Internet Works</h2>
+      <p>Here’s a great video that explains how everything connects:</p>
+      <div class="video-placeholder">
+        <p>[Video will go here]</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="reveal">
     <p>© 2025 Ariel Smolov</p>
   </footer>
 

@@ -10,6 +10,7 @@ body {
   background: #fff;
   color: #111;
   line-height: 1.7;
+  scroll-behavior: smooth;
 }
 
 /* Navbar */
@@ -47,9 +48,9 @@ body {
 
 /* Section base */
 .section {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 120px 20px;
+  padding: 140px 20px;
   text-align: center;
 }
 
@@ -68,7 +69,7 @@ body {
 }
 
 .section p {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: #555;
   margin-bottom: 30px;
 }
@@ -105,6 +106,53 @@ body {
   justify-content: center;
   color: #777;
   font-size: 1.3rem;
+}
+
+/* Definitions Accordion */
+.definitions {
+  text-align: left;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.definition {
+  margin-bottom: 1rem;
+}
+
+.definition-toggle {
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  background: #f5f5f5;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.definition-toggle:hover {
+  background: #eaeaea;
+}
+
+.definition-text {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1rem;
+  margin-top: 0.5rem;
+  background: #fafafa;
+  border-left: 4px solid #0071e3;
+  border-radius: 0 12px 12px 0;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.definition.open .definition-text {
+  max-height: 200px;
+  padding: 1rem;
 }
 
 /* Footer */

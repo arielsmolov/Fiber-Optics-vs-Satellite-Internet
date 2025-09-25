@@ -127,25 +127,28 @@ nav a:hover {
   color: #555;
 }
 
-/* === Image Row (side-by-side placeholders) === */
-.image-row {
+.media-row {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  margin-top: 40px;
+  gap: 25px;
   flex-wrap: wrap;
+  margin-bottom: 50px;
 }
 
-.image-row img {
+.media-row img,
+.media-row iframe {
   width: 45%;
-  max-width: 400px;
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  object-fit: cover;
 }
 
-.image-row img:hover {
-  transform: scale(1.05);
+@media (max-width: 980px) {
+  .media-row img,
+  .media-row iframe {
+    width: 100%;
+    height: 220px;
+  }
 }
 
 /* === Footer === */

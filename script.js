@@ -1,52 +1,30 @@
-// Wait for DOM
-document.addEventListener('DOMContentLoaded', () => {
-  /* --- Scroll reveal --- */
-  const reveals = document.querySelectorAll('.reveal');
-
-  function revealOnScroll() {
-    const windowHeight = window.innerHeight;
-    const revealPoint = 140; // adjust threshold
-    reveals.forEach(el => {
-      const top = el.getBoundingClientRect().top;
-      if (top < windowHeight - revealPoint) el.classList.add('active');
-    });
-  }
-
-  window.addEventListener('scroll', revealOnScroll, { passive: true });
-  revealOnScroll(); // run once
-
-  /* --- Definitions accordion toggle --- */
-  const toggles = document.querySelectorAll('.definition-toggle');
-  toggles.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.parentElement;
-      const isOpen = item.classList.contains('open');
-      // close other open items if you want only one open at a time:
-      // document.querySelectorAll('.definition.open').forEach(d=> d.classList.remove('open'));
-      item.classList.toggle('open');
-      btn.setAttribute('aria-expanded', !isOpen);
-    });
-  });
-
-  /* --- Tooltip touch/click support for mobile --- */
-  const tooltips = document.querySelectorAll('.tooltip');
-
-  // Toggle tooltip on tap/click and close when clicking elsewhere
-  tooltips.forEach(t => {
-    t.addEventListener('click', (e) => {
-      e.stopPropagation();
-      // hide other tooltips
-      document.querySelectorAll('.tooltip.show').forEach(x => { if (x !== t) x.classList.remove('show'); });
-      t.classList.toggle('show');
-    });
-
-    // keyboard support
-    t.setAttribute('tabindex', '0');
-    t.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); t.classList.toggle('show'); } });
-  });
-
-  // Clicking outside hides tooltips
-  document.addEventListener('click', () => {
-    document.querySelectorAll('.tooltip.show').forEach(t => t.classList.remove('show'));
+// =====================
+// Definitions Accordion
+// =====================
+document.querySelectorAll('.definition-toggle').forEach(button => {
+  button.addEventListener('click', () => {
+    const parent = button.parentElement;
+    parent.classList.toggle('open');
+    const expanded = button.getAttribute('aria-expanded') === 'true';
+    button.setAttribute('aria-expanded', !expanded);
   });
 });
+
+// =====================
+// Reveal on Scroll
+// =====================
+const revealElements = document.querySelectorAll('.reveal');
+
+function revealOnScroll() {
+  const triggerPoint = window.innerHeight * 0.85;
+
+  revealElements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < triggerPoint) {
+      el.classList.add('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);

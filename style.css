@@ -241,3 +241,19 @@ footer {
   height: 100%;
   border: none;
 }
+/* Style images inside content blocks */
+.content-block img {
+  max-width: 100%;              /* makes image scale down on smaller screens */
+  height: auto;                 /* keeps proportions correct */
+  display: block;               /* removes inline spacing issues */
+  margin: 1.5rem auto;          /* centers it and adds breathing room */
+  border-radius: var(--radius); /* soft rounded corners */
+  box-shadow: var(--shadow);    /* subtle Apple-style shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Optional: subtle hover effect */
+.content-block img:hover {
+  transform: scale(1.02);       /* small zoom in */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}

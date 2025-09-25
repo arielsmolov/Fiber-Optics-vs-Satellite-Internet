@@ -257,3 +257,10 @@ footer {
   transform: scale(1.02);       /* small zoom in */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
+/* Limit text width inside sections */
+.section .text {
+  max-width: 800px;   /* keeps text in a readable column */
+  margin: 0 auto;     /* centers it */
+  font-size: 1.1rem;
+  line-height: 1.7;   /* adds breathing room */
+}
